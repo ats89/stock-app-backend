@@ -1,0 +1,10 @@
+{
+  "name": "stock-app-backend",
+  "version": "1.0.0",
+  "description": "stock app backend",
+  "main": "server.js",
+  "repository": "https://github.com/ats89/stock-app-backend",
+  "author": "Anthony Sin <anthony.t.sin@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
