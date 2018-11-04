@@ -1,8 +1,7 @@
-const url = require('url');
 const router = require('express').Router();
 const passport = require('passport');
 const jwt = require('../../config/jwt');
-const env = process.env.NODE_ENV || 'development';
+const { User } = require('../../models');
 
 require('../../config/passport');
 
@@ -49,11 +48,7 @@ router.post('/login', (req, res) => {
    
     if (!user) return res.json({error: { usernameOrEmail: 'Could not find user.'}});
 
-    if (!user.password && user.FacebookId) {
-      res.redirect('/auth/facebook');
-    } else if (!user.password && user.GoogleId) {
-      res.redirect('/auth/google');
-    } else if (user.validPassword(password)) {
+    if (user.validPassword(password)) {
       return res.json({accessToken: jwt.createToken(user)});
     } else {
       return res.json({ error: { password: 'Invalid Password.'}});

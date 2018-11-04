@@ -6,6 +6,9 @@ const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 3100;
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 app.use(routes);
 
 app.listen(PORT, () => {
