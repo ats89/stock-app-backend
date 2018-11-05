@@ -15,14 +15,14 @@ if (env === 'production') {
     process.env[config.database],
     process.env[config.username],
     process.env[config.password],
-    config
+    config,
   );
 } else {
   sequelize = new Sequelize(
     config.database,
     config.username,
     config.password,
-    config
+    config,
   );
 }
 

@@ -4,7 +4,7 @@ module.exports = {
       type: Sequelize.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
     },
     username: {
       type: Sequelize.STRING,
@@ -14,11 +14,11 @@ module.exports = {
     email: {
       type: Sequelize.STRING,
       allowNull: false,
-      unique: true
+      unique: true,
     },
     password: {
       type: Sequelize.STRING,
-      allowNull: true, 
+      allowNull: true,
     },
     createdAt: {
       type: Sequelize.DATE,
@@ -27,7 +27,7 @@ module.exports = {
     updatedAt: {
       type: Sequelize.DATE,
       allowNull: false,
-    }
+    },
   }),
-  down: (queryInterface, Sequelize) => queryInterface.dropTable('Users')
+  down: queryInterface => queryInterface.dropTable('Users'),
 };

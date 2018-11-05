@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         len: [8, 60],
       },
-    }
+    },
   }, {
     indexes: [
       {
@@ -34,13 +34,13 @@ module.exports = (sequelize, DataTypes) => {
       },
       {
         fields: ['email'],
-      }
+      },
     ],
   });
 
   User.beforeCreate((user) => {
     if (user.password) {
-      user.password = bcrypt.hashSync(user.password, 8);
+      user.password = bcrypt.hashSync(user.password, 8); // eslint-disable-line no-param-reassign
     }
   });
 
