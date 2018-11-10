@@ -7,6 +7,10 @@
   "author": "Anthony Sin <anthony.t.sin@gmail.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint **/*.js", 
+    "watch": "nodemon server"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
