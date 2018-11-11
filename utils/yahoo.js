@@ -8,7 +8,7 @@ async function getDaily(ticker) {
     const $ = cheerio.load(response.data);
 
     $('tbody').children('tr').each((i, row) => {
-      $(row).children('td').each((i, cell) => {
+      $(row).children('td').each((j, cell) => {
         console.log(i, $(cell).text());
       });
     });
@@ -19,4 +19,4 @@ async function getDaily(ticker) {
 
 module.exports = {
   getDaily,
-}
+};
