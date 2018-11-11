@@ -3,8 +3,10 @@ const { getDaily } = require('../utils/yahoo');
 const getHistoricalData = (req, res) => {
   const { ticker } = req.params;
 
-  getDaily(ticker);
-  res.send('hi');
+  getDaily(ticker).then((data) => {
+    console.log(data.length);
+    res.json(data);
+  });
 };
 
 module.exports = {
