@@ -1,14 +1,19 @@
-const { getDaily } = require('../utils/yahoo');
+const {
+  getCookieAndCrumb,
+  getHistoricalData,
+} = require('../utils/yahoo');
 
-const getHistoricalData = (req, res) => {
+const saveStockData = (req, res) => {
   const { ticker } = req.params;
 
-  getDaily(ticker).then((data) => {
-    console.log(data.length);
-    res.json(data);
+  // getHistoricalData(ticker, 'daily').then((data) => {
+  //   res.send(data);
+  // });
+  getCookieAndCrumb().then((result) => {
+    res.json(result);
   });
 };
 
 module.exports = {
-  getHistoricalData,
+  saveStockData,
 };
