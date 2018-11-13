@@ -77,10 +77,10 @@ async function getCookieAndCrumb() {
     result.cookie = cookie;
     result.crumb = crumb;
 
-    // Config.create({
-    //   name: 'yahoo',
-    //   value: JSON.stringify(result),
-    // });
+    Config.create({
+      name: 'yahoo',
+      value: JSON.stringify(result),
+    });
   } catch (error) {
     console.error(error);
   }
