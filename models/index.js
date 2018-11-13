@@ -17,6 +17,13 @@ if (env === 'production') {
     process.env[config.password],
     config,
   );
+} else if (process.env.TRAVIS) {
+  sequelize = new Sequelize(
+    config.database,
+    config.username,
+    '',
+    config,
+  );
 } else {
   sequelize = new Sequelize(
     config.database,

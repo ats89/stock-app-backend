@@ -21,7 +21,7 @@ describe('getCookieAndCrumb', () => {
       raw: true,
     });
     const { value } = yahoo;
-    
+
     expect(JSON.parse(value)).to.have.all.keys(['cookie', 'crumb']);
   });
 });

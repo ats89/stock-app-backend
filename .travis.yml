@@ -7,3 +7,9 @@ branches:
 cache:
   directories:
     - "node_modules"
+services:
+  - mysql
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS stock_test;'
+env:
+  - TRAVIS=true
