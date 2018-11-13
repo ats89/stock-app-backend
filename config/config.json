@@ -10,7 +10,7 @@
   },
   "test": {
     "username": "root",
-    "password": "root",
+    "password": "",
     "database": "stock_test",
     "host": "localhost",
     "port": 3306,
