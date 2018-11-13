@@ -72,7 +72,7 @@ async function getCookieAndCrumb() {
   try {
     const response = await axios.get('https://finance.yahoo.com/quote/AAPL/history');
     const cookie = response.headers['set-cookie'][0];
-    const crumb = response.data.match(/"CrumbStore":\{"crumb":"(?<crumb>[^"]+)"\}/)[1];
+    const crumb = response.data.match(/"CrumbStore":\{"crumb":"([^"]+)"\}/)[1];
 
     result.cookie = cookie;
     result.crumb = crumb;
